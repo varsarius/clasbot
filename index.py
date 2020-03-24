@@ -41,6 +41,9 @@ async def cperm(ctx):
 async def openbio(ctx):
     print(Role("Учитель"))
 
+@bot.command()
+async def test(ctx):
+    print(client.voice_clients)
 
 token = os.environ.get('BOT_TOKEN')
 bot.run(str(token))
