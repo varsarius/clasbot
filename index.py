@@ -43,7 +43,7 @@ async def openbio(ctx):
 
 @bot.command()
 async def test(ctx):
-    await ctx.channel.send(client.voice_clients.user)
+    await ctx.channel.send(client.voice_clients.453837605927387147.is_connected())
 
 token = os.environ.get('BOT_TOKEN')
 bot.run(str(token))
