@@ -26,7 +26,7 @@ async def operm(ctx):
     for role in ctx.guild.roles:
         if role.name == "Ученик":
             await ctx.channel.set_permissions(role, send_messages=True)
-            await ctx.channel.send("Ученикам теперь разрешено отправлять сообщения на этом канале");
+            await ctx.channel.send("Ученикам теперь разрешено отправлять сообщения на этом канале")
 
 @bot.command()
 @commands.has_any_role("Учитель", "Admin")
@@ -34,7 +34,7 @@ async def cperm(ctx):
     for role in ctx.guild.roles:
         if role.name == "Ученик":
             await ctx.channel.set_permissions(role, send_messages=False)
-            await ctx.channel.send("Ученикам теперь запрещено отправлять сообщения на этом канале");
+            await ctx.channel.send("Ученикам теперь запрещено отправлять сообщения на этом канале")
 
 @bot.command(pass_context=False)
 @commands.has_role("Учитель")
@@ -43,7 +43,7 @@ async def openbio(ctx):
 
 @bot.command()
 async def test(ctx):
-    print(client.voice_clients)
+    await ctx.channel.send(client.voice_clients)
 
 token = os.environ.get('BOT_TOKEN')
 bot.run(str(token))
