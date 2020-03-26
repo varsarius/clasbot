@@ -21,7 +21,7 @@ async def on_member_join(member):
     await member.add_roles(role)
 
 @bot.command()
-@commands.has_any_role("Учитель", "Admin")
+@commands.has_any_role("Учитель", "Admin", "lowAdmin")
 async def operm(ctx):
     for role in ctx.guild.roles:
         if role.name == "Ученик":
@@ -29,7 +29,7 @@ async def operm(ctx):
             await ctx.channel.send("Ученикам теперь разрешено отправлять сообщения на этом канале")
 
 @bot.command()
-@commands.has_any_role("Учитель", "Admin")
+@commands.has_any_role("Учитель", "Admin", "lowAdmin")
 async def cperm(ctx):
     for role in ctx.guild.roles:
         if role.name == "Ученик":
