@@ -45,6 +45,57 @@ async def openbio(ctx):
 async def test(ctx):
     channel = ctx.message.author.voice_channel
     await ctx.channel.send(channel)
+    
+
+alarm_time = '01:55'#24hrs
+hour = 21
+min = 32
+channel_id = '691342588372058273'
+
+async def time_check():
+    while True:
+        timeq = 1
+        now = time.localtime()
+        h = now.tm_hour
+        m = now.tm_min
+        messages = ('Test')
+        channel = bot.get_channel(691342588372058273)
+        if (h == 8 and m == 45):
+            await channel.send("До начала урока 15 минут")
+            timeq = 90
+        elif (h == 8 and m == 50):
+            await channel.send("До начала урока 10 минут")
+        elif (h == 8 and m == 55):
+            await channel.send("До начала урока 5 минут")
+        elif (h == 9 and m == 0):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+        elif (h == 9 and m = 45):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
+        elif (h == 10 and m == 0):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+        elif (h == 10 and m = 45):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
+        elif (h == 11 and m == 0):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+        elif (h == 11 and m = 45):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
+        elif (h == 12 and m == 0):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+        elif (h == 12 and m = 45):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
+        elif (h == 12 and m == 0):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+        elif (h == 12 and m = 45):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
+        elif (h == 13 and m == 0):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+        elif (h == 13 and m = 45):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
+        else:
+           timeq = 1
+        await asyncio.sleep(timeq)
+
+bot.loop.create_task(time_check())
 
 token = os.environ.get('BOT_TOKEN')
 bot.run(str(token))
