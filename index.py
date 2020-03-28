@@ -95,7 +95,7 @@ async def time_check():
         elif (h == 13 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
             timeq = 90
-        elif (h == 13 and m == 45):
+        elif (h == 14 and m == 05):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
             timeq = 90
         else:
