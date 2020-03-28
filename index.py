@@ -34,11 +34,11 @@ async def operm(ctx):
 
 @bot.command()
 @commands.has_any_role("Учитель", "Admin", "lowAdmin")
-  async def cperm(ctx):
-    for role in ctx.guild.roles:
-        if role.name == "Ученик":
-            await ctx.channel.set_permissions(role, send_messages=False)
-            await ctx.channel.send("Ученикам теперь запрещено отправлять сообщения на этом канале")
+async def cperm(ctx):
+     for role in ctx.guild.roles:
+       if role.name == "Ученик":
+             await ctx.channel.set_permissions(role, send_messages=False)
+           await ctx.channel.send("Ученикам теперь запрещено отправлять сообщения на этом канале")
 
 async def time_check():
     while True:
