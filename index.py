@@ -7,7 +7,6 @@ from discord.utils import get
 from discord import message
 from discord.guild import Guild
 import os
-client = discord.Client()
 bot = commands.Bot(command_prefix='/')
 
 @bot.command(pass_context=True) #разрешаем передавать агрументы
@@ -65,32 +64,46 @@ async def time_check():
             timeq = 90
         elif (h == 8 and m == 50):
             await channel.send("До начала урока 10 минут")
+            timeq = 90
         elif (h == 8 and m == 55):
             await channel.send("До начала урока 5 минут")
+            timeq = 90
         elif (h == 9 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+            timeq = 90
         elif (h == 9 and m = 45):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
+            timeq = 90
         elif (h == 10 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+            timeq = 90
         elif (h == 10 and m = 45):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
+            timeq = 90
         elif (h == 11 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+            timeq = 90
         elif (h == 11 and m = 45):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
+            timeq = 90
         elif (h == 12 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+            timeq = 90
         elif (h == 12 and m = 45):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
+            timeq = 90
         elif (h == 12 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+            timeq = 90
         elif (h == 12 and m = 45):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
+            timeq = 90
         elif (h == 13 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+            timeq = 90
         elif (h == 13 and m = 45):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
+            timeq = 90
         else:
            timeq = 1
         await asyncio.sleep(timeq)
