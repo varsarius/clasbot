@@ -34,7 +34,7 @@ async def operm(ctx):
 
 @bot.command()
 @commands.has_any_role("Учитель", "Admin", "lowAdmin")
-async def cperm(ctx):
+  async def cperm(ctx):
     for role in ctx.guild.roles:
         if role.name == "Ученик":
             await ctx.channel.set_permissions(role, send_messages=False)
