@@ -40,11 +40,6 @@ async def cperm(ctx):
             await ctx.channel.set_permissions(role, send_messages=False)
             await ctx.channel.send("Ученикам теперь запрещено отправлять сообщения на этом канале")
 
-@bot.command(pass_context=False)
-@commands.has_role("Учитель")
-async def openbio(ctx):
-    print(Role("Учитель"))
-
 async def time_check():
     while True:
         timeq = 1
