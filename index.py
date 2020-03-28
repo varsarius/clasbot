@@ -1,3 +1,4 @@
+from datetime import datetime
 import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
@@ -7,6 +8,10 @@ from discord.utils import get
 from discord import message
 from discord.guild import Guild
 import os
+import datetime
+import time
+import sqlite3
+from discord.utils import get
 bot = commands.Bot(command_prefix='/')
 
 @bot.command(pass_context=True) #разрешаем передавать агрументы
@@ -40,17 +45,6 @@ async def cperm(ctx):
 async def openbio(ctx):
     print(Role("Учитель"))
 
-@bot.command()
-async def test(ctx):
-    channel = ctx.message.author.voice_channel
-    await ctx.channel.send(channel)
-    
-
-alarm_time = '01:55'#24hrs
-hour = 21
-min = 32
-channel_id = '691342588372058273'
-
 async def time_check():
     while True:
         timeq = 1
@@ -71,44 +65,46 @@ async def time_check():
         elif (h == 9 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
             timeq = 90
-        elif (h == 9 and m = 45):
+        elif (h == 9 and m == 45):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
             timeq = 90
         elif (h == 10 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
             timeq = 90
-        elif (h == 10 and m = 45):
+        elif (h == 10 and m == 45):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
             timeq = 90
         elif (h == 11 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
             timeq = 90
-        elif (h == 11 and m = 45):
+        elif (h == 11 and m == 45):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
             timeq = 90
         elif (h == 12 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
             timeq = 90
-        elif (h == 12 and m = 45):
+        elif (h == 12 and m == 45):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
             timeq = 90
         elif (h == 12 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
             timeq = 90
-        elif (h == 12 and m = 45):
+        elif (h == 12 and m == 45):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
             timeq = 90
         elif (h == 13 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
             timeq = 90
-        elif (h == 13 and m = 45):
+        elif (h == 13 and m == 45):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
             timeq = 90
         else:
            timeq = 1
         await asyncio.sleep(timeq)
-
 bot.loop.create_task(time_check())
+#**************************************************************************
 
-token = os.environ.get('BOT_TOKEN')
-bot.run(str(token))
+
+
+#**************************************************************************
+bot.run(("NjkxMDgxNzc3MTQxMjUyMTY3.Xnpcpg.672VFgGw8C0RAnj7AJeqQnSQ0W8"))
