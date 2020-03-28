@@ -107,4 +107,5 @@ bot.loop.create_task(time_check())
 
 
 #**************************************************************************
-bot.run(("NjkxMDgxNzc3MTQxMjUyMTY3.Xnpcpg.672VFgGw8C0RAnj7AJeqQnSQ0W8"))
+token = os.environ.get('BOT_TOKEN')
+bot.run(str(token))
