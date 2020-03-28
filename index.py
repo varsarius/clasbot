@@ -53,14 +53,26 @@ async def time_check():
         m = now.tm_min
         messages = ('Test')
         channel = bot.get_channel(691342588372058273)
-        if (h == 8 and m == 45):
+        if (h == 6 and m == 45):
             await channel.send("До начала урока 15 минут")
             timeq = 90
-        elif (h == 8 and m == 50):
+        elif (h ==6 and m == 50):
             await channel.send("До начала урока 10 минут")
             timeq = 90
-        elif (h == 8 and m == 55):
+        elif (h == 6 and m == 55):
             await channel.send("До начала урока 5 минут")
+            timeq = 90
+        elif (h == 7 and m == 0):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+            timeq = 90
+        elif (h == 7 and m == 45):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
+            timeq = 90
+        elif (h == 8 and m == 0):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
+            timeq = 90
+        elif (h == 8 and m == 45):
+            await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
             timeq = 90
         elif (h == 9 and m == 0):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
@@ -78,24 +90,6 @@ async def time_check():
             await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
             timeq = 90
         elif (h == 11 and m == 45):
-            await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
-            timeq = 90
-        elif (h == 12 and m == 0):
-            await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
-            timeq = 90
-        elif (h == 12 and m == 45):
-            await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
-            timeq = 90
-        elif (h == 12 and m == 0):
-            await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
-            timeq = 90
-        elif (h == 12 and m == 45):
-            await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
-            timeq = 90
-        elif (h == 13 and m == 0):
-            await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
-            timeq = 90
-        elif (h == 14 and m == 18):
             await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
             timeq = 90
         else:
