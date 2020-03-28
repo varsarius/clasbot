@@ -9,7 +9,7 @@ from discord.guild import Guild
 import os
 bot = commands.Bot(command_prefix='/')
 
-@bot.command(pass_context=True) #разрешаем передавать агрументы
+ @bot.command(pass_context=True) #разрешаем передавать агрументы
 async def echo(ctx, arg): #создаем асинхронную фунцию бота
     await ctx.send(arg) #отправляем обратно аргумент
 
