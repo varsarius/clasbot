@@ -311,11 +311,11 @@ async def time_check():
                     if(m == 0):
                         await channel.send("Дзинь-Дзинь-Дзинь***Урок начался")
                         timeq = 90 #чтобы не приходило 60 сообщений
-                        voiceIn
+                        voiceIn()
                     elif(m == 45):
                         await channel.send("Дзинь-Дзинь-Дзинь***Урок закончился")
                         timeq = 90 #чтобы не приходило 60 сообщений
-                        voiceIn
+                        voiceIn()
                     elif(m == 50 or m == 55):
                         await channel.send(f"До начала урока {60-m} минут")
                         timeq = 90 #чтобы не приходило 60 сообщений
