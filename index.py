@@ -326,47 +326,6 @@ async def time_check():
         await asyncio.sleep(timeq)
 bot.loop.create_task(time_check())
 #**************************************************************************
-@bot.command()
-async def weather(ctx, *, name):
-
-    def prognoz(href):
-        r = requests.Session()
-        res = r.get(href)
-        ans = bs(res.content, 'html.parser')
-        weather = ans.findChildren('body')[0]
-        Weather = weather.find('div', class_ = 'det_pog')
-        return Weather.find('p').get_text()
-        r.close()
-
-
-    s = requests.Session()
-    res = s.get('https://goodmeteo.ru/poisk/?s=' + name)
-    s.close()
-
-    try:
-        await ctx.send('**Расчитываем прогноз на сегодня...**')
-        ans_bs = bs(res.content, 'html.parser')
-        Choose = ans_bs.find_all('div', class_ = 'search_line')[0]
-        search_name = Choose.find_all('a', target="_blank")[0].get_text().replace(' ', '')
-        search_href = 'https://goodmeteo.ru' + Choose.find_all('a', target="_blank")[0]['href']
-        await ctx.send(prognoz(search_href))
-    except IndexError:
-        await ctx.send('**Ничего не найдено, попробуйте изменить поиск**')
-@bot.command()
-async def search_video(ctx, name):
-
-    await ctx.send('**Ищем видосик...**')
-    s = requests.Session()
-    res = s.get('https://www.youtube.com/results?search_query=' + name + '&pbj=1').content
-    s.close()
-    ans_bs = bs(res, 'html.parser')
-
-    Videos = ans_bs.findChildren('body')[0]
-    VIDEOS = Videos.find_all('div', class_ = 'yt-lockup-content')[0]
-    ViDeos = VIDEOS.select('a[class="yt-uix-tile-link yt-ui-ellipsis yt-ui-ellipsis-2 yt-uix-sessionlink spf-link"]')[0]['href']
-
-    await ctx.send('https://youtube.com' + ViDeos)
-
 
 token = os.environ.get('BOT_TOKEN')
 bot.run(str(token))
