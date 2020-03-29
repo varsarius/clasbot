@@ -279,7 +279,7 @@ async def time_check():
         timeq = 1
         now = time.localtime(time.time())
         channel = bot.get_channel(691342588372058273)
-        h = now.tm_hour + 2
+        h = now.tm_hour + 3
         m = now.tm_min
         w = now.tm_wday
         #if (w == 0): #понедельник
@@ -366,6 +366,7 @@ async def search_video(ctx, name):
     ViDeos = VIDEOS.select('a[class="yt-uix-tile-link yt-ui-ellipsis yt-ui-ellipsis-2 yt-uix-sessionlink spf-link"]')[0]['href']
 
     await ctx.send('https://youtube.com' + ViDeos)
+
 
 token = os.environ.get('BOT_TOKEN')
 bot.run(str(token))
